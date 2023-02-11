@@ -18,11 +18,11 @@ public class QuizGame {
 				// 3.  Use an if statement to check if their answer is correct
 				if (q1.equals(answer1)) {
 					JOptionPane.showMessageDialog(null,"Correct!");
-					score =+1;
+					score +=1;
 
 				} else {
 					JOptionPane.showMessageDialog(null,"Wrong!");
-					score =-1;
+					score -=1;
 
 				}
 				JOptionPane.showMessageDialog(null,"Alright. Next question counts (2^31)-1 times");
@@ -31,11 +31,11 @@ public class QuizGame {
 						// 3.  Use an if statement to check if their answer is correct
 						if (q2.equals(answer2)) {
 							JOptionPane.showMessageDialog(null,"Correct!");
-							score =+2147483647;
+							score +=2147483647;
 
 						} else {
 							JOptionPane.showMessageDialog(null,"Wrong!");
-							score =-2147483647;
+							score -=2147483647;
 
 						}
 				
