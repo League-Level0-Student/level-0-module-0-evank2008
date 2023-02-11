@@ -12,7 +12,19 @@ public class PentagonCrazy {
 	public static void main(String[] args) {
 		
 		//  Create a new Robot
-
+		Robot bot = new Robot();
+		// Set your robot's pen down 
+		bot.penDown();
+		// SPEED. Set the robot to go at max speed (100)
+		bot.setSpeed(100);
+		bot.setPenColor(0,255, 0);
+		int sides = 5;
+		int angle = 360/sides;
+		int count = 0;
+		while ( count < 200 ) {
+			bot.move(count);
+			bot.turn(angle+1);
+			count += 1;
 		//  Put the robot's pen down
 
 		//  SPEED. Make the robot go at maximum speed (100)
@@ -37,9 +49,9 @@ public class PentagonCrazy {
 				//  INCREASE COUNT. Increase the count by 1
 		
 		//  End the while loop here
-
+		}
 		//  Now hide the robot so you can see the pattern it has drawn.
-		
+		bot.hide();
 		//  Run the program. 
 		//  Check the pattern against the picture in the recipe. If it matches, you are done!
 	
