@@ -14,13 +14,16 @@ public class DragonFight {
 		JOptionPane.showMessageDialog(null, "Defeat the dragon to take its treasure!", "Dragon Fighter", 0, dragon);
 
 		// 1. Create some variables to hold health levels
-		
+		int php = 100;
+		int dhp = 100;
 			// playerHealth to store your health - set it equal to 100
 	
 			// dragonHealth to store the dragon's health - set it equal to 100
 
 		// 2. Create some variables to hold the attack strengths. These will be given different values later. 
-		
+		int pattack = 0;
+		int dattack = 0;
+		int strength = 0;
 			// playerAttack to store the damage the player's attack will do - set it equal
 			// to 0 for now.
 	
@@ -35,9 +38,24 @@ public class DragonFight {
 
 				// 3. Ask the player in a pop-up if they want to attack the dragon with a yell
 				// or a kick
-	
+			String attack = JOptionPane.showInputDialog("Attack the dragon! Will you yell or kick it?");
 				// 4. If they typed in "yell":
-	
+			if (attack == "yell") {
+				pattack += ran.nextInt(10);
+				JOptionPane.showMessageDialog(null,"You yell furiously at the dragon! Your ATTACK increases by " + pattack + "!");
+			}
+			else if (attack == "kick") {
+				strength = ran.nextInt(25);
+				pattack += strength;
+				dhp -= pattack;
+				JOptionPane.showMessageDialog(null,"You kick the dragon so hard he loses " + pattack + " health!");
+				pattack -=strength;
+			}
+			else {
+				JOptionPane.showMessageDialog(null,"Your dragon got so confused by your command that it had a siezure and died. Too bad.");
+				System.exit(2);
+			}
+			
 					  // -- Find a random number between 0 and 10 and store it in playerAttack. Use
 					  // ran.nextInt(10)
 			
